@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue学习第7天</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div v-if="isIf">哈哈哈哈，我是v-if</div>
+
+        <div v-show="isShow">哈哈哈哈，我是v-show</div>
+        <button @click="handleClick">toggle</button>
+
+        <ul v-for="item of list" :key="item">{{item}}</ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            data :{
+                isIf: true,
+                isShow: false,
+                list: [1, 2, 3, 3]
+            },
+            methods: {
+                handleClick: function () {
+                    this.isShow = !this.isShow;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!--学习小结：-->
+<!--v-if控制dom的存在与否，v-show控制dom的显示与否，v-for控制一组数据在页面循环显示的dom结构。-->
+<!--v-if和v-show的区别是：v-if 是剔除对应标签、 v-show 是通过css 隐藏标签（可修改对应的布尔值，通过浏览器控制台查看源码变化看出）-->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE学习第5天</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <!--<div v-bind:title="title">鼠标放在这里试试</div>-->
+        <!--v-bind:title 的简写形式-->
+        <div :title="title">鼠标放在这里试试</div>
+
+        <input v-model="content" placeholder="输入一些内容看看"/>
+        <p>content is: {{content}} </p>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                title: "this is a v-bind data",
+                content: "数据双向绑定，动态改变"
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!--学习小结：-->
+<!--1.属性绑定 v-bind,根据data数据来决定页面显示。-->
+<!--2.双向数据绑定 v-model,即既可以根据data数据决定页面显示的数据，也可以通过页面改变data数据内容，进而改变页面显示。-->
