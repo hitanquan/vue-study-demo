@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>vue学习第二天</title>
-    <script src="../vue.js"></script>
+  <meta charset="UTF-8">
+  <title>vue学习第二天</title>
+  <script src="../vue.js"></script>
 </head>
+
 <body>
-    <div id="vue_det">
-        <h1>学习内容 : {{ content }}</h1>
-        <h1>教程网址 : {{ url }}</h1>
-        <h1>当前时间 : {{ currentTime }}</h1>
-        <h1>{{ details() }}</h1>
-    </div>
+  <div id="vue_det">
+    <h1>学习内容 : {{ content }}</h1>
+    <h1>教程网址 : {{ url }}</h1>
+    <h1>当前时间 : {{ currentTime }}</h1>
+    <h1>{{ details() }}</h1>
+  </div>
 
-    <script type="text/javascript">
-        // 我们的数据对象，可以看作 Java 的数组
-        let data = {content: "vue", url: "www.runoob.com", currentTime: new Date()};
+  <script type="text/javascript">
+    // 我们的数据对象，可以看作 Java 的数组
+    let data = { content: "vue", url: "www.runoob.com", currentTime: new Date() };
 
-        // 创建一个 vue 实例
-        let vue = new Vue({
-            el: '#vue_det',
-            // 这里是指定了前面定义的 data 数组作为 vue 的 data 属性值
-            data: data,
-            // 这里是 vue 中标准的定义数据的语法
-            data: {
-                content: "vue",
-                url: "www.runoob.com",
-                currentTime: new  Date(),
-            },
-            methods: {
-                details: function() {
-                    return  this.content + " - 学的不仅是技术，更是梦想！";
-                }
-            }
-        });
+    // 创建一个 vue 实例
+    let vue = new Vue({
+      el: '#vue_det',
+      // 这里是指定了前面定义的 data 数组作为 vue 的 data 属性值
+      data: data,
+      // 这里是 vue 中标准的定义数据的语法
+      data: {
+        content: "vue",
+        url: "www.runoob.com",
+        currentTime: new Date(),
+      },
+      methods: {
+        details: function () {
+          return this.content + " - 学的不仅是技术，更是梦想！";
+        }
+      }
+    });
 
-        // 它们引用相同的对象！
-        document.write(vue.content === data.content);
-        document.write("<br>");
-        // 设置属性也会影响到原始数据
-        // 试着把代码注释放开查看页面效果
-        // vue.content = "改变 vue 的 content 属性值";
+    // 它们引用相同的对象！
+    document.write(vue.content === data.content);
+    document.write("<br>");
+    // 设置属性也会影响到原始数据
+    // 试着把代码注释放开查看页面效果
+    // vue.content = "改变 vue 的 content 属性值";
 
-        // 除了数据属性，Vue 实例还提供了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来
-        document.write(vue.$data === data) // false
-        document.write("<br>")
-        document.write(vue.$el === document.getElementById('vue_det')) // true
-    </script>
+    // 除了数据属性，Vue 实例还提供了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来
+    document.write(vue.$data === data) // false
+    document.write("<br>")
+    document.write(vue.$el === document.getElementById('vue_det')) // true
+  </script>
 </body>
+
 </html>
 
 <!--学习内容小结：-->

@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>vue学习第7天</title>
-    <script src="../vue.js"></script>
+  <meta charset="UTF-8">
+  <title>vue学习第7天</title>
+  <script src="../vue.js"></script>
 </head>
+
 <body>
-    <div id="root">
-        <div v-if="isIf">哈哈哈哈，我是v-if</div>
+  <div id="root">
+    <div v-if="isIf">哈哈哈哈，我是v-if</div>
 
-        <div v-show="isShow">哈哈哈哈，我是v-show</div>
-        <button @click="handleClick">toggle</button>
+    <div v-show="isShow">哈哈哈哈，我是v-show</div>
+    <button @click="handleClick">toggle</button>
 
-        <ul v-for="item of list" :key="item">{{item}}</ul>
-    </div>
+    <ul v-for="item of list" :key="item">{{item}}</ul>
+  </div>
 
-    <script>
-        new Vue({
-            el: "#root",
-            data :{
-                isIf: false,
-                isShow: false,
-                list: [1, 2, 3, 3]
-            },
-            methods: {
-                handleClick: function () {
-                    this.isShow = !this.isShow;
-                }
-            }
-        })
-    </script>
+  <script>
+    new Vue({
+      el: "#root",
+      data: {
+        isIf: false,
+        isShow: false,
+        list: [1, 2, 3, 3]
+      },
+      methods: {
+        handleClick: function () {
+          this.isShow = !this.isShow;
+        }
+      }
+    })
+  </script>
 </body>
+
 </html>
 
 <!--学习小结：-->

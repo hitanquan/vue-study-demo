@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>vue 学习第四天</title>
-    <script src="../vue.js"></script>
+  <meta charset="UTF-8">
+  <title>vue 学习第四天</title>
+  <script src="../vue.js"></script>
 </head>
+
 <body>
-    <div id="root">
-        <div @click="handleClick">
-            {{ content }}
-        </div>
+  <div id="root">
+    <div @click="handleClick">
+      {{ content }}
     </div>
+  </div>
 </body>
 
 <script>
-    new Vue({
-        el: '#root',
-        data: {
-            content: 'hello'
-        },
-        methods: {
-            handleClick: function () {
-                this.content = 'world'
-            }
-        }
-    })
+  new Vue({
+    el: '#root',
+    data: {
+      content: 'hello'
+    },
+    methods: {
+      handleClick: function () {
+        this.content = 'world'
+      }
+    }
+  })
 </script>
+
 </html>
 
 <!--学习小结：数据、事件和方法-->
-

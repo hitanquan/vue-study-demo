@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>vue学习第一天</title>
-    <script src="../vue.js"></script>
+  <meta charset="UTF-8">
+  <title>vue学习第一天</title>
+  <script src="../vue.js"></script>
 </head>
+
 <body>
 
-    <!--2.这个 div 是 Vue 实例的挂载点，注意：前提是该 div 通过 id="app" 和 Vue 实例关联起来了才可称其为 Vue 实例挂载点。-->
-    <div id="app">
-        <!--3.div 里面的内容是模板。-->
-        <!--6.这里的模板不加 html 标签也能在页面中显示将数据出来-->
-        {{ message }}
-    </div>
+  <!--2.这个 div 是 Vue 实例的挂载点，注意：前提是该 div 通过 id="app" 和 Vue 实例关联起来了才可称其为 Vue 实例挂载点。-->
+  <div id="app">
+    <!--3.div 里面的内容是模板。-->
+    <!--6.这里的模板不加 html 标签也能在页面中显示将数据出来-->
+    {{ message }}
+  </div>
 
-    <!--3.该 div 没有通过 id 属性和 Vue 实例关联起来，Vue 实例只会将数据渲染到挂载点中，所以该 div 渲染不了 data 数据。-->
-   <!-- <div>
-        <p>{{ message }}</p>
-    </div>-->
+  <!--3.该 div 没有通过 id 属性和 Vue 实例关联起来，Vue 实例只会将数据渲染到挂载点中，所以该 div 渲染不了 data 数据。-->
+  <!-- <div>
+    <p>{{ message }}</p>
+  </div> -->
 
-    <script type="text/javascript">
-        // 1.这是一个 Vue 实例
-        new Vue({
-            el: '#app',
-            // 4.模板可以放在挂载点中，也可以通过 template 属性放在 Vue 实例里面。
-            // 5.这里的模板必须加 html 标签才能在页面中显示将数据出来
-            template: '<p>hello, {{ message }}</p>',
-            data: {
-                message: 'Vue.js!'
-            }
-        })
-    </script>
+  <script type="text/javascript">
+    // 1.这是一个 Vue 实例
+    new Vue({
+      el: '#app',
+      // 4.模板可以放在挂载点中，也可以通过 template 属性放在 Vue 实例里面。
+      // 5.这里的模板必须加 html 标签才能在页面中显示将数据出来
+      template: '<p>hello, {{ message }}</p>',
+      data: {
+        message: 'Vue.js!'
+      }
+    })
+  </script>
 </body>
+
 </html>
 <!--day01-->
 <!--1.vue.js的安装：三种方式-->
