@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue内容渲染指令</title>
+  <script src="../vue.js"></script>
+</head>
+
+<body>
+  <!-- 1.插值语法
+  2.v-text 文本指令
+  3.v-html html标签指令 -->
+
+  <div id="app">
+    <p>插值语法：{{ content}}</p>
+    <h3 v-text="content">演示v-text文本的用法</h3>
+    <p v-html="htmlText"></p>
+  </div>
+</body>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      content: '你好啊，我是一段文字',
+      htmlText: '<h2>二级标题</h2>'
+    }
+  })
+</script>
+
+</html>
