@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue-数据响应式demo</title>
+  <script src="../vue.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <label>姓名:</label><span>{{username}}</span>
+    </div>
+  </div>
+</body>
+<script>
+  const vm = new Vue({
+    el: '.container',
+    data: {
+      username: '张三'  // data数据改变页面也跟着更新
+    }
+  })
+
+  console.log('vm', vm)
+</script>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据响应式原理：抛出问题</title>
+</head>
+
+<body>
+  <div class="container">
+    <p><label>姓：</label><span id="firstName"></span></p>
+    <p><label>名：</label><span id="lastName"></span></p>
+    <label>年龄：</label><span id="age"></span>
+  </div>
+</body>
+
+<script>
+  let user = {
+    firstName: '张',
+    lastName: '三',
+    age: 22
+  }
+
+  function showFirstName() {
+    document.querySelector('#firstName').textContent = user.firstName;
+  }
+
+  function showLastName() {
+    document.querySelector('#lastName').textContent = user.lastName;
+  }
+
+  function showAge() {
+    document.querySelector('#age').textContent = user.age;
+  }
+
+  showFirstName();
+  showLastName();
+  showAge();
+
+  // 引出问题：现在假设 user 对象数据要更改，怎么让页面也对应更新
+  user.firstName = '刘'; //这里改变了 user 的 firstName 的值，但是页面没对应更新
+
+  // 要更新页面数据，就得再次调用以下函数
+  showFirstName();
+
+  // 若要是程序中不断更改了 user 对象的数据，需要频繁的调用以上三个函数才能实现页面更新，就算把三个函数合并为一个函数也没有根本上解决问题（代码冗余）
+  // 解决办法见 index.html
+
+</script>
+
+</html>

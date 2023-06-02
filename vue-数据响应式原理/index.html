@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据响应式原理：问题解决，原理解释</title>
+</head>
+<!-- 详细原理介绍可回看渡一前端大师课：视频应该在【阿里云盘】可找到 -->
+
+<body>
+  <div class="container">
+    <p><label>姓：</label><span id="firstName"></span></p>
+    <p><label>名：</label><span id="lastName"></span></p>
+    <label>年龄：</label><span id="age"></span>
+  </div>
+</body>
+
+<script src="./index.js"></script>
+<script>
+  let user = {
+    firstName: '张',
+    lastName: '三',
+    age: 22
+  }
+
+  function showFirstName() {
+    document.querySelector('#firstName').textContent = user.firstName;
+  }
+
+  function showLastName() {
+    document.querySelector('#lastName').textContent = user.lastName;
+  }
+
+  function showAge() {
+    document.querySelector('#age').textContent = user.age;
+  }
+
+  observe(user);
+
+  // 若想验证 user 对象数据改变时，页面是否也跟着更新，可在浏览器控制台更改，即：user.xxx = xxx
+  // 和 index-question.html 对比一下效果更明显
+
+  autorun(showFirstName);
+  autorun(showLastName);
+  autorun(showAge);
+
+</script>
+
+</html>
